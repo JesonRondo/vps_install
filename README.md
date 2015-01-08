@@ -1,0 +1,3 @@
+### install
+
+  wget xxx
