@@ -13,4 +13,4 @@ cd node-v0.10.35
 make && make install
 
 npm install -g n
-n 0.11.13
+n 0.11
