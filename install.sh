@@ -21,3 +21,5 @@ npm install shadowsocks
 mv node_modules/shadowsocks/ ./
 rm -fr node_modules
 echo 'nohup node /app/shadowsocks/bin/ssserver &' >> /etc/rc.d/rc.local
+/sbin/iptables -I INPUT -p tcp --dport 8388 -j ACCEPT
+/etc/init.d/iptables save
