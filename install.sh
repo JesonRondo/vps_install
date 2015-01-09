@@ -20,3 +20,4 @@ mkdir -p /app && cd /app
 npm install shadowsocks
 mv node_modules/shadowsocks/ ./
 rm -fr node_modules
+echo 'nohup node /app/shadowsocks/bin/ssserver &' >> /etc/rc.d/rc.local
