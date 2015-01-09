@@ -14,3 +14,9 @@ make && make install
 
 npm install -g n
 n 0.11
+
+# shadowsocks
+mkdir -p /app && cd /app
+npm install shadowsocks
+mv node_modules/shadowsocks/ ./
+rm -fr node_modules
