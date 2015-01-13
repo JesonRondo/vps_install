@@ -1,5 +1,8 @@
 #! /bin/sh
 
+yum update
+y
+
 # gcc
 yum -y install gcc gcc-c++ openssl-devel
 y
@@ -25,8 +28,18 @@ echo 'nohup node /data/app/shadowsocks/bin/ssserver &' >> /etc/rc.d/rc.local
 /etc/init.d/iptables save
 
 #blog
-yum install git mysql mysql-server
+yum install git mysql mysql-server nginx
 y
 cd /data/app
+git clone https://github.com/JesonRondo/vcms.git
 git clone https://github.com/JesonRondo/notii.git
+service mysqld start
+mysqladmin -u root password pazzword
+mysql -u root -p
+pazzword
+create database zombie;
+use zombie;
+exit
+mysql -u root -p zombie < vcms/vcms.sql
+pazzword
 
