@@ -16,10 +16,17 @@ npm install -g n
 n 0.11
 
 # shadowsocks
-mkdir -p /app && cd /app
+mkdir -p /data/app && cd /data/app
 npm install shadowsocks
 mv node_modules/shadowsocks/ ./
 rm -fr node_modules
-echo 'nohup node /app/shadowsocks/bin/ssserver &' >> /etc/rc.d/rc.local
+echo 'nohup node /data/app/shadowsocks/bin/ssserver &' >> /etc/rc.d/rc.local
 /sbin/iptables -I INPUT -p tcp --dport 8388 -j ACCEPT
 /etc/init.d/iptables save
+
+#blog
+yum install git mysql mysql-server
+y
+cd /data/app
+git clone https://github.com/JesonRondo/notii.git
+
